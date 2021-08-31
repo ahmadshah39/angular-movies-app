@@ -1,0 +1,21 @@
+<div *ngIf="movie">
+  <app-breadcrumb [movieTitle]="movie.title"> </app-breadcrumb>
+  <app-movie-info [movie]="movie" [directors]="directors"></app-movie-info>
+  <app-movie-info-bar
+    [time]="movie.runtime"
+    [budget]="movie.budget"
+    [revenue]="movie.revenue"
+  ></app-movie-info-bar>
+  <div class="movie-grid-wrapper">
+    <h1>Actors</h1>
+    <div class="content">
+      <app-actors
+        *ngFor="let actor of actors"
+        [name]="actor.name"
+        [character]="actor.character"
+        [image]="actor.profile_path"
+        [actorImgUrl]="actorImgUrl"
+      ></app-actors>
+    </div>
+  </div>
+</div>

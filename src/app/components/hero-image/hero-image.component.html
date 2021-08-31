@@ -1,0 +1,14 @@
+<div
+  *ngIf="heroMovie"
+  class="hero-image-wrapper"
+  [ngStyle]="{
+    'background-image': 'url(' + imgUrl + heroMovie.backdrop_path + ')'
+  }"
+>
+  <div class="content">
+    <div class="text">
+      <h1>{{ heroMovie.title }}</h1>
+      <p>{{ heroMovie.overview }}</p>
+    </div>
+  </div>
+</div>

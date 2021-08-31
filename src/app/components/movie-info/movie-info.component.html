@@ -1,0 +1,31 @@
+<div
+  *ngIf="movie && directors"
+  class="movie-info-wrapper"
+  [ngStyle]="{
+    'background-image': 'url(' + img_url + movie.backdrop_path + ')'
+  }"
+>
+  <div class="content">
+    <app-thumb
+      [thumbUrl]="thumb_url"
+      [movieImgUrl]="movie.poster_path"
+    ></app-thumb>
+    <div class="text">
+      <h1>{{ movie.title }}</h1>
+      <h3>PLOT</h3>
+      <p>{{ movie.overview }}</p>
+
+      <div class="rating-directors">
+        <div>
+          <h3>RATING</h3>
+          <div class="score">{{ movie.vote_average }}</div>
+        </div>
+        <div class="director">
+          <h3>DIRECTOR{{ directors.length > 1 ? "S" : "" }}</h3>
+
+          <p *ngFor="let director of directors">{{ director.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

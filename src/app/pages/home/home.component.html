@@ -1,0 +1,22 @@
+<app-hero-image
+  [heroMovie]="movies.results[0]"
+  [imgUrl]="img_url"
+></app-hero-image>
+<app-serach-bar (onSearch)="onSearch($event)"></app-serach-bar>
+<div class="home-grid-wrapper">
+  <h1>Most Popular Movies</h1>
+  <div class="content">
+    <app-thumb
+      *ngFor="let movie of movies.results"
+      [thumbUrl]="thumb_url"
+      [movieId]="movie.id"
+      [movieImgUrl]="movie.poster_path"
+    ></app-thumb>
+  </div>
+</div>
+<app-spinner *ngIf="loading"></app-spinner>
+<app-button
+  *ngIf="loading != true"
+  [text]="buttonText"
+  (btnClick)="onBtnClick()"
+></app-button>

@@ -1,0 +1,16 @@
+<a *ngIf="movieId; else noLink" [routerLink]="['/movie', movieId]">
+  <img
+    class="thumb-image"
+    src="{{ movieImgUrl ? thumbUrl + movieImgUrl : 'assets/img/no_image.jpg' }}"
+    alt="movie thumb"
+    srcset=""
+  />
+</a>
+<ng-template #noLink>
+  <img
+    class="thumb-image"
+    src="{{ movieImgUrl ? thumbUrl + movieImgUrl : 'assets/img/no_image.jpg' }}"
+    alt="movie thumb"
+    srcset=""
+  />
+</ng-template>
