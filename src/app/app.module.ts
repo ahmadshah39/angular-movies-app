@@ -17,6 +17,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { MovieInfoBarComponent } from './components/movie-info-bar/movie-info-bar.component';
 import { ActorsComponent } from './components/actors/actors.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ActorsComponent } from './components/actors/actors.component';
     MovieInfoComponent,
     MovieInfoBarComponent,
     ActorsComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

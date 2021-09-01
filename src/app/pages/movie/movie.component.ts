@@ -37,6 +37,5 @@ export class MovieComponent implements OnInit {
           (member: any) => member.job === 'Director'
         );
       });
-    // console.log(this.movieService.getMovie(this.movieId!));
   }
 }

@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./serach-bar.component.scss'],
 })
 export class SerachBarComponent implements OnInit {
-  @Output() onSearch: EventEmitter<any> = new EventEmitter();
+  @Output() onSearch: EventEmitter<string> = new EventEmitter();
   searchTerm: string = '';
   constructor() {}
 

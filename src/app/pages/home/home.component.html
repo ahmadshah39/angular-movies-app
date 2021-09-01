@@ -1,9 +1,10 @@
 <app-hero-image
+  *ngIf="searchTerm === '' && movies"
   [heroMovie]="movies.results[0]"
   [imgUrl]="img_url"
 ></app-hero-image>
 <app-serach-bar (onSearch)="onSearch($event)"></app-serach-bar>
-<div class="home-grid-wrapper">
+<div *ngIf="movies" class="home-grid-wrapper">
   <h1>Most Popular Movies</h1>
   <div class="content">
     <app-thumb
@@ -16,7 +17,7 @@
 </div>
 <app-spinner *ngIf="loading"></app-spinner>
 <app-button
-  *ngIf="loading != true"
+  *ngIf="loading != true && movies.page < movies.total_pages"
   [text]="buttonText"
   (btnClick)="onBtnClick()"
 ></app-button>
